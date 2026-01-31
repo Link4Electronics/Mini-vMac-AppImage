@@ -2,7 +2,7 @@
 Type=Application
 Name=Mini vMac
 Comment=A miniature early Macintosh emulator for 68k machines
-Exec=/usr/bin/minivmac
+Exec=minivmac
 Icon=minivmac.ico
 Terminal=false
 Categories=Emulator;System;
