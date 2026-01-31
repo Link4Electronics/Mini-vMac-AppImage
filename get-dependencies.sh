@@ -26,7 +26,11 @@ REPO="https://github.com/minivmac/minivmac"
 GRON="https://raw.githubusercontent.com/xonixx/gron.awk/refs/heads/main/gron.awk"
 
 echo "Making nightly build of Mini vMac..."
-	VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
+	# Get the latest tag
+	TAG=$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')
+	# Get the short hash
+	HASH=$(git ls-remote "$REPO" HEAD | cut -c 1-8)
+	VERSION="${TAG}-${HASH}"
 	git clone "$REPO" ./minivmac
 echo "$VERSION" > ~/version
 
