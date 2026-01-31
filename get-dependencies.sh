@@ -42,7 +42,7 @@ GRON="https://raw.githubusercontent.com/xonixx/gron.awk/refs/heads/main/gron.awk
 
 echo "Making nightly build of Mini vMac..."
 	VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
-	git clone "$REPO" ./minivmac
+	git clone "$REPO" --recursive ./minivmac
 echo "$VERSION" > ~/version
 
 # BUILD Mini vMac
