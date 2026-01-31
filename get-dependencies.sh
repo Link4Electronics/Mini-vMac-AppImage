@@ -32,17 +32,12 @@ echo "$VERSION" > ~/version
 
 # BUILD Mini vMac
 cd ./minivmac
-#mkdir -p bin
 gcc setup/tool.c -o setup_t
-#ls
-#source build_linux.sh
 ./build_linux.sh
-#make -j $(nproc)
 
 # icon and desktop entry
-install -Dm644 .AppDir/minivmac.desktop /usr/share/applications/minivmac.desktop
+#install -Dm644 .AppDir/minivmac.desktop /usr/share/applications/minivmac.desktop
 install -Dm644 src/ICONAPPW.ico /usr/share/icons/hicolor/32x32/apps/minivmac.ico
-cd minivmac
 # install docs
 install -dm755 /usr/share/doc/minivmac
 install -m0644 COPYING.txt /usr/share/doc/minivmac/COPYING.txt
