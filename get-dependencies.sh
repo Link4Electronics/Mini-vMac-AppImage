@@ -31,7 +31,7 @@ if [ "${DEVEL_RELEASE-}" = 1 ]; then
 	VERSION="$(git ls-remote "$REPO" HEAD | cut -c 1-9 | head -1)"
 	git clone "$REPO" ./minivmac
 else
-	echo "Making stable build of dolphin-emu..."
+	echo "Making stable build of Mini vMac..."
 	wget "$GRON" -O ./gron.awk
 	chmod +x ./gron.awk
 	VERSION=$(wget https://api.github.com/repos/minivmac/minivmac/tags -O - | \
