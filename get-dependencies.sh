@@ -25,12 +25,12 @@ echo "---------------------------------------------------------------"
 REPO="https://github.com/minivmac/minivmac"
 
 echo "Making nightly build of Mini vMac..."
-	# Get the latest tag
-	TAG=$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')
-	# Get the short hash
-	HASH=$(git ls-remote "$REPO" HEAD | cut -c 1-8)
-	VERSION="${TAG}-${HASH}"
-	git clone "$REPO" ./minivmac
+# Get the latest tag
+TAG=$(git ls-remote --tags --sort="v:refname" "$REPO" | tail -n1 | sed 's/.*\///; s/\^{}//')
+# Get the short hash
+HASH=$(git ls-remote "$REPO" HEAD | cut -c 1-8)
+VERSION="${TAG}-${HASH}"
+git clone "$REPO" ./minivmac
 echo "$VERSION" > ~/version
 
 # BUILD Mini vMac
