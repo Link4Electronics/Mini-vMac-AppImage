@@ -4,5 +4,6 @@ Name=Mini vMac
 Comment=A miniature early Macintosh emulator for 68k machines
 Exec=minivmac
 Icon=minivmac
+StartupWMClass=minivmac
 Terminal=false
 Categories=Emulator;System;
